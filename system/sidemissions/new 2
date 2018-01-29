@@ -1,0 +1,21 @@
+_locations = ["mrk1","mrk2","mrk3"];
+
+
+
+_objType = floor(random(11));
+
+_rndLoc = _locations call BIS_fnc_selectRandom;
+
+switch (_objType) do
+
+{
+
+   case 0: {[(getMarkerPos _rndLoc)] execVM "objective0Create.sqf"};//have your task be created in this file and other objective specific stuff created
+
+   ...
+
+   case 10: {[(getMarkerPos _rndLoc)] execVM "objective10Create.sqf"};
+
+   default {hintSilent "Objective not defined"};
+
+};

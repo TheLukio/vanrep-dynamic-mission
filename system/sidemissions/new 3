@@ -1,0 +1,4 @@
+this && ((vehicle player) in thisList) && (vehicle player) isKindOf "Ship"
+
+
+tempgrp=creategroup civilian;  [man1,man2,man3] join tempgrp; {_x assignAsCargo (vehicle player)} forEach units tempgrp; units tempgrp orderGetIn true;

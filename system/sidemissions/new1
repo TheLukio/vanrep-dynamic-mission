@@ -1,0 +1,47 @@
+//example objective0Create.sqf
+//call line being: [(getMarkerPos _rndLoc)] execVM "objective0Create.sqf";
+
+_centerPos = (_this select 0);
+
+//This is where any DAC stuff would go, assuming it can use the "_centerPos" to spawn stuff around
+
+_clearTask =
+[
+	"ClearID",
+	true,
+	["Clear the area by any means necessary.","Primary: Clear Area","Clear Area"],
+	_centerPos,
+	"AUTOASSIGNED",
+	6,
+	true,
+	true
+] call BIS_fnc_setTask;
+
+_trigger = createTrigger ["EmptyDetector",_centerPos];
+_trigger setTriggerActivation ["EAST","NOT PRESENT",false];
+_trigger setTriggerArea [300,300,0,false];
+_trigger setTriggerStatements ["this",format ["[%1,'Succeeded'] call BIS_fnc_taskSetState",_clearTask],""];
+
+
+_tower = createVehicle ["Land_TTowerBig_2_F", _centerPos, [], 0, "NONE"];
+_towerTask = 
+[
+   "RadioTowerID",
+   true,
+   ["Destroy the tower by any means necessary.","Secondary: Destroy Tower","Destroy Tower"],
+   getPos _tower,
+   "AUTOASSIGNED",
+   5,
+   true,
+   true
+] call BIS_fnc_setTask; 
+
+_towerCompleted = [_tower,_towerTask] spawn 
+{
+	waitUntil {!alive (_this select 0)}; 
+	[(_this select 1),"Succeeded"] call BIS_fnc_taskSetState;
+};
+
+waitUntil {([_clearTask] call BIS_fnc_taskState isEqualTo "Succeeded") && {scriptDone _towerCompleted}};
+
+0 = [] execVM "objectiveInit.sqf";

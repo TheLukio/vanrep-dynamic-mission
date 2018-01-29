@@ -1,0 +1,1 @@
+player setVariable ['QS_seated',FALSE];
