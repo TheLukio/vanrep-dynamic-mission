@@ -28,7 +28,7 @@ overviewText = "Sartest 1.1";
 
 // VR Default params
 
-disableChannels[]={0,5}; // disable global, direct, system
+disableChannels[] = {0,5}; // disable global, direct, system
 disabledAI=0;// 0 Fills empty playable slots with AI, 1 They Don't fill the empty slots
 
 // F3 - Debug Console

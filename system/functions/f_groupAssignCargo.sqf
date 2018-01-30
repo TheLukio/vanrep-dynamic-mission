@@ -11,7 +11,12 @@ _groupParam setSpeedMode "Fast";
 _entryTime = time + 60;
 waitUntil {time >= _entryTime};
 if  ( {_x in _vehParam} count (units _groupParam) != ({alive _x} count units _groupParam) ) then {
-  {_x moveInCargo _vehParam} forEach units _groupParam;
+//_entryIndex =  fullCrew [_vehParam, "cargo", true];
+  {
+    if !(_x in _vehparam) then {
+      _x moveInCargo (_vehParam select 0);
+    };
+  } forEach units _groupParam;
 };
-return true;
+true
 // EOF

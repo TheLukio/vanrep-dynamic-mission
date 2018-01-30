@@ -11,8 +11,6 @@ SM_fn_delMarker = {
 
 
 SM_fn_setskill = {
-private ["_group"];
-_group = _this select 0;
   {
   	_x setSkill ["aimingspeed", 0.5];
   	_x setSkill ["aimingaccuracy", 0.25];

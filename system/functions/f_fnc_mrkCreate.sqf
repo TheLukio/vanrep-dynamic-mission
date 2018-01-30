@@ -1,9 +1,7 @@
 params["_mrkname","_posAO","_size1","_size2","_shape","_color"];
 
-private ["_mark_ao"];
-
     //name, position, x-size,y-size,shape,color
-    _mrk_ao = createMarker [_mrkname, _posAO];
+    private _mrk_ao = createMarker [_mrkname, _posAO];
     _mrk_ao setMarkerSize [_size1,_size2]; // defaults 100x100
     _mrk_ao setMarkerShape _shape; // RECTANGLE,ELLIPSE (default Ellipse)
     _mrk_ao setMarkerColor _color; // ColorCIV, colorBLUFOR, colorOPFOR (default colorBlufor) colorIndependent

@@ -1,31 +1,20 @@
 if (!isServer) exitWith {}; // Server only
 
+private ["_missionTime"];
 // call functions
-call compile preprocessfile "system\sidemissions\functions.sqf";
+//call compile preprocessfile "system\sidemissions\functions.sqf";
 //[] execVM "f\removeBody\f_addRemoveBodyEH.sqf";
-_vehArray = ["I_Heli_Light_03_unarmed_F","I_Heli_Transport_02_F"];
-
-_dir = random 2;
-_vehFlyby = _vehArray call BIS_fnc_selectRandom;
-_SideHQ = createCenter independent;
-
-switch (_dir) do {
-    //cases (insertable by snippet)
-    case (1): {
-      ambientFly = [getMarkerPos "amb_flyby_2", getMarkerPos "amb_flyby_1", 350, "NORMAL", _vehFlyby, independent] call BIS_fnc_ambientFlyBy;
-    };
-    case (2): {
-      ambientFly = [getMarkerPos "amb_flyby_3", getMarkerPos "amb_flyby_2", 350, "NORMAL", _vehFlyby, independent] call BIS_fnc_ambientFlyBy;
-    };
-    default {
-      ambientFly = [getMarkerPos "amb_flyby_1", getMarkerPos "amb_flyby_3", 200, "NORMAL", _vehFlyby, independent] call BIS_fnc_ambientFlyBy;
-    };
-};
+[] execVM "system\functions\f_ambientHelos.sqf";
 
 
-playSound3D ["A3\Sounds_F\sfx\alarm_independent.wss", base_speakers, false, getPosASL base_speakers, 1, 1, 150];
-sleep 5;
-playSound3D ["A3\Sounds_F\sfx\alarm_independent.wss", base_speakers, false, getPosASL base_speakers2, 1, 1, 150];
+_missionTime = time + 120;
+waitUntil {time >= _missionTime};
+
+createcenter independent;
+
+playSound3D ["A3\Sounds_F\sfx\alarm_independent.wss", base_speakers, false, getPosASL base_speakers, 3, 0.7, 100];
+sleep 2;
+playSound3D ["A3\Sounds_F\sfx\alarm_independent.wss", base_speakers, false, getPosASL base_speakers2, 3, 0.7, 100];
 [] execVM "system\sidemissions\f_genVAmbush.sqf"; //uncomment and edit to test different missions
 /*
 // create missions list array
