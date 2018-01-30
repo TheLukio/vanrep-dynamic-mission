@@ -8,7 +8,7 @@ class EditorData
 	toggles=69;
 	class ItemIDProvider
 	{
-		nextID=1352;
+		nextID=1353;
 	};
 	class MarkerIDProvider
 	{
@@ -578,7 +578,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=661;
+		items=662;
 		class Item0
 		{
 			dataType="Marker";
@@ -642,12 +642,12 @@ class Mission
 		class Item6
 		{
 			dataType="Marker";
-			position[]={18988.742,0,21945.424};
+			position[]={18962.875,0,21570.25};
 			name="aaf_sar1_6";
 			type="Empty";
 			colorName="ColorBlue";
 			id=6;
-			atlOffset=123.11362;
+			atlOffset=136.91916;
 		};
 		class Item7
 		{
@@ -1254,11 +1254,12 @@ class Mission
 		class Item70
 		{
 			dataType="Marker";
-			position[]={21171.98,27.384382,16796.59};
+			position[]={19814.25,0,21777.75};
 			name="lmine_2";
 			type="Empty";
 			colorName="ColorGrey";
 			id=70;
+			atlOffset=178.26698;
 		};
 		class Item71
 		{
@@ -1561,8 +1562,8 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={26784.375,23.119562,24632.029};
-				angles[]={0.049293593,2.2824299,0.019999012};
+				position[]={21049.715,17.633213,19231.213};
+				angles[]={6.2458687,2.2824299,6.2378831};
 			};
 			side="Empty";
 			flags=4;
@@ -1574,7 +1575,6 @@ class Mission
 			};
 			id=102;
 			type="B_Heli_Light_01_F";
-			atlOffset=-0.37940598;
 		};
 		class Item103
 		{
@@ -8212,7 +8212,7 @@ class Mission
 			dataType="Logic";
 			class PositionInfo
 			{
-				position[]={23150.672,3.1900001,18962.689};
+				position[]={23171.125,3.1900001,18449.5};
 			};
 			name="SERVER";
 			id=475;
@@ -15013,20 +15013,19 @@ class Mission
 		class Item513
 		{
 			dataType="Marker";
-			position[]={22987.406,33.75,18513.047};
+			position[]={15329.875,33.75,16721};
 			name="amb_flyby_1";
 			type="Empty";
 			id=843;
-			atlOffset=30.559999;
+			atlOffset=16.303926;
 		};
 		class Item514
 		{
 			dataType="Marker";
-			position[]={23483.615,30.334961,21137.371};
+			position[]={26876.375,24.516853,24555.75};
 			name="amb_flyby_2";
 			type="Empty";
 			id=844;
-			atlOffset=-60.113365;
 		};
 		class Item515
 		{
@@ -17708,11 +17707,11 @@ class Mission
 		class Item566
 		{
 			dataType="Marker";
-			position[]={19390.365,-20.211502,19170.863};
+			position[]={23116.125,1.845459,18830.375};
 			name="amb_flyby_3";
 			type="Empty";
 			id=1083;
-			atlOffset=-32.577621;
+			atlOffset=-1.3445411;
 		};
 		class Item567
 		{
@@ -21129,6 +21128,15 @@ class Mission
 				};
 				nAttributes=1;
 			};
+		};
+		class Item661
+		{
+			dataType="Marker";
+			position[]={9440.125,-163,21370.75};
+			name="amb_flyby_4";
+			type="Empty";
+			id=1352;
+			atlOffset=-195.7948;
 		};
 	};
 	class Connections
